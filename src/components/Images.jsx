@@ -8,8 +8,10 @@ const Images = () => {
 
     return (
         <>
-            <h1 className="text-center mt-6 underline text-2xl">Results for Cats</h1>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 my-10">
+            <h1 className="text-center mt-8 underline text-xl">Results for Keycaps</h1>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 my-10 max-w-7xl mx-auto px-8">
+                {/* an image is rendered for each item in the response array */}
+                {/* React requires passing a key prop with map() */}
                 {response.map((data, key) => <Image key={key} data={data} />)}
             </div>
         </>

@@ -10,7 +10,7 @@ export const ImageContext = createContext();
 
 // arrow function component
 const App = () => {
-  const { response, isLoading, error, fetchData } = useAxios(`search/photos?page=1&query=office&client_id=${import.meta.env.VITE_REACT_APP_ACCESS_KEY}`);
+  const { response, isLoading, error, fetchData } = useAxios(`search/photos?page=1&query=keycaps&client_id=${import.meta.env.VITE_REACT_APP_ACCESS_KEY}`);
   // console.log(response);
 
   // data from the API call

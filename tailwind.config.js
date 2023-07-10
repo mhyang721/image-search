@@ -11,6 +11,7 @@ export default {
         // 'violet-lt': '#F5F3FF',
         'teal': '#CCFBF1',
         'teal-dk': '#99F6E4',
+        'teal-xdk': '#5EEAD4',
         'yellow-lt': '#FFFBEB',
         'rose': '#FDA4AF',
         'slate': '#1E293B',

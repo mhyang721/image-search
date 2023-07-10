@@ -7,16 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
+        'violet-lt': '#DDD6FE',
         'violet': '#C4B5FD',
+        'violet-dk': '#2E1065',
         // 'violet-lt': '#F5F3FF',
-        'teal': '#CCFBF1',
-        'teal-dk': '#99F6E4',
+        'teal-lt': '#CCFBF1',
+        'teal': '#99F6E4',
         'teal-xdk': '#5EEAD4',
-        'yellow-lt': '#FFFBEB',
+        'pink': '#FEE2E2',
         'rose': '#FDA4AF',
-        'slate': '#1E293B',
-        'slate-lt': '#F8FAFC',
-        'gray': '#E5E7EB',
+        // 'gray': '#E5E7EB',
+        'gray-lt': '#FAFAFA',
+        'gray-dk': '#262626',
+        'black': '#171717',
       },
       fontFamily: {
         'sans': ['Sen', 'sans-serif'],

@@ -13,7 +13,6 @@ const App = () => {
   // create state variable for search result title
   const [searchTitle, setSearchTitle] = useState('');
   const { response, isLoading, error, fetchData } = useAxios(`search/photos?page=1&query=keycaps&client_id=${import.meta.env.VITE_REACT_APP_ACCESS_KEY}`);
-  // console.log(response);
 
   // data from the API call
   const value = {

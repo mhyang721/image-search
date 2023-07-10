@@ -1,7 +1,7 @@
-import { useContext } from "react";
-import { ImageContext } from "../App";
-import Image from "./Image";
-import Skeleton from "./Skeleton";
+import { useContext } from 'react';
+import { ImageContext } from '../App';
+import Image from './Image';
+import Skeleton from './Skeleton';
 
 const Images = () => {
     // read the response & loading state data from ImageContext

@@ -10,30 +10,30 @@ export const ImageContext = createContext();
 
 // arrow function component
 const App = () => {
-  // create state variable for search result title
-  const [searchTitle, setSearchTitle] = useState('');
-  const { response, isLoading, error, fetchData } = useAxios(`search/photos?page=1&query=keycaps&client_id=${import.meta.env.VITE_REACT_APP_ACCESS_KEY}`);
+    // create state variable for search result title
+    const [searchTitle, setSearchTitle] = useState('');
+    const { response, isLoading, error, fetchData } = useAxios(`search/photos?page=1&query=keycaps&client_id=${import.meta.env.VITE_REACT_APP_ACCESS_KEY}`);
 
-  // data from the API call
-  const value = {
-    response,
-    isLoading,
-    error,
-    fetchData,
-    // add searchTitle state & setSearchTitle function
-    searchTitle,
-    setSearchTitle
-  }
+    // data from the API call
+    const value = {
+        response,
+        isLoading,
+        error,
+        fetchData,
+        // add searchTitle state & setSearchTitle function
+        searchTitle,
+        setSearchTitle
+    }
 
-  return (
-    // provide data regarding the API call to components that have the useContext Hook
-    <ImageContext.Provider value={value}>
-      <Header>
-      <SearchField></SearchField>
-      </Header>
-      <Images />
-    </ImageContext.Provider>
-  );
+    return (
+        // provide data regarding the API call to components that have the useContext Hook
+        <ImageContext.Provider value={value}>
+        <Header>
+        <SearchField></SearchField>
+        </Header>
+        <Images />
+        </ImageContext.Provider>
+    );
 }
 
 export default App;

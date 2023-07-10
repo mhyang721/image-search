@@ -1,12 +1,12 @@
-import { useState, useContext } from "react";
-import { ImageContext } from "../App";
+import { useState, useContext } from 'react';
+import { ImageContext } from '../App';
 
 const SearchField = () => {
     // create state variable for search query
     // searchValue = current value of input field
     // setSearchValue = updates the searchValue state
     // search input is initially set to blank
-    const [searchValue, setSearchValue] = useState("");
+    const [searchValue, setSearchValue] = useState('');
     // handle API request
     const { fetchData, setSearchTitle } = useContext(ImageContext);
 
@@ -18,7 +18,7 @@ const SearchField = () => {
     const handleButtonSearch = () => {
         fetchData(`search/photos?page=1&query=${searchValue}&client_id=${import.meta.env.VITE_REACT_APP_ACCESS_KEY}`)
         // clear search input after button is clicked
-        setSearchValue("");
+        setSearchValue('');
         // set search result title as the searched value
         setSearchTitle(searchValue);
     }
@@ -27,7 +27,7 @@ const SearchField = () => {
         if(e.key === 'Enter') {
             fetchData(`search/photos?page=1&query=${searchValue}&client_id=${import.meta.env.VITE_REACT_APP_ACCESS_KEY}`)
             // clear search input after pressing enter
-            setSearchValue("");
+            setSearchValue('');
             setSearchTitle(searchValue);
         }
     }
@@ -51,6 +51,6 @@ const SearchField = () => {
             >🔍</button>
         </div>
     );
-  }
+}
   
-  export default SearchField;
+export default SearchField;

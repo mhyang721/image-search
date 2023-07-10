@@ -1,7 +1,7 @@
 // import axios for making HTTP requests
-import axios from "axios";
+import axios from 'axios';
 // import useEffect hook from React
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 // declare 3 state variables using the useState hook
 const useAxios = (param) => {
@@ -34,7 +34,7 @@ const useAxios = (param) => {
             // regardless of outcome, loading state is set back to false
             setIsLoading(false)
         }
-    }
+    };
 
     // useEffect hook triggers the API request whenever param changes
     // calls fetchData fxn with param value
@@ -47,7 +47,7 @@ const useAxios = (param) => {
         isLoading,
         error,
         fetchData: url => fetchData(url)
-    }
+    };
 }
 
 export default useAxios;

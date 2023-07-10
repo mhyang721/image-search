@@ -5,11 +5,11 @@ import Skeleton from "./Skeleton";
 
 const Images = () => {
     // read the response & loading state data from ImageContext
-    const { response, isLoading } = useContext(ImageContext);
+    const { response, isLoading, searchTitle } = useContext(ImageContext);
 
     return (
         <>
-            <h1 className="text-center mt-8 underline text-xl">Results for Keycaps</h1>
+            <h1 className="text-center mt-8  text-xl">🔎 Results for "{searchTitle || 'keycaps'}"</h1>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 my-10 max-w-7xl mx-auto px-8">
                 {/* display skeleton component when API request is loading */}
                 {/* when done loading, an image is rendered for each item in the response array */}

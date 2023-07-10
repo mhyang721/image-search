@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 import Header from './components/Header';
 import SearchField from './components/SearchField';
 import Images from './components/Images';
@@ -10,6 +10,8 @@ export const ImageContext = createContext();
 
 // arrow function component
 const App = () => {
+  // create state variable for search result title
+  const [searchTitle, setSearchTitle] = useState('');
   const { response, isLoading, error, fetchData } = useAxios(`search/photos?page=1&query=keycaps&client_id=${import.meta.env.VITE_REACT_APP_ACCESS_KEY}`);
   // console.log(response);
 
@@ -18,7 +20,10 @@ const App = () => {
     response,
     isLoading,
     error,
-    fetchData
+    fetchData,
+    // add searchTitle state & setSearchTitle function
+    searchTitle,
+    setSearchTitle
   }
 
   return (

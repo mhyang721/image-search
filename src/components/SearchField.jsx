@@ -8,7 +8,7 @@ const SearchField = () => {
     // search input is initially set to blank
     const [searchValue, setSearchValue] = useState("");
     // handle API request
-    const { fetchData } = useContext(ImageContext);
+    const { fetchData, setSearchTitle } = useContext(ImageContext);
 
     // set searchValue as the text entered in the search input
     const handleInputChange = (e) => {
@@ -19,6 +19,8 @@ const SearchField = () => {
         fetchData(`search/photos?page=1&query=${searchValue}&client_id=${import.meta.env.VITE_REACT_APP_ACCESS_KEY}`)
         // clear search input after button is clicked
         setSearchValue("");
+        // set search result title as the searched value
+        setSearchTitle(searchValue);
     }
     // make API request after hitting enter, based on search input
     const handleEnterSearch = e => {
@@ -26,6 +28,7 @@ const SearchField = () => {
             fetchData(`search/photos?page=1&query=${searchValue}&client_id=${import.meta.env.VITE_REACT_APP_ACCESS_KEY}`)
             // clear search input after pressing enter
             setSearchValue("");
+            setSearchTitle(searchValue);
         }
     }
 

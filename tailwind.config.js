@@ -1,31 +1,45 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        'violet-lt': '#DDD6FE',
-        'violet': '#C4B5FD',
-        'violet-dk': '#2E1065',
-        // 'violet-lt': '#F5F3FF',
-        'teal-lt': '#CCFBF1',
-        'teal': '#99F6E4',
-        'teal-xdk': '#5EEAD4',
-        'pink': '#FEE2E2',
-        'rose': '#FDA4AF',
-        // 'gray': '#E5E7EB',
-        'gray-lt': '#FAFAFA',
-        'gray-dk': '#262626',
-        'black': '#171717',
-      },
-      fontFamily: {
-        'sans': ['Sen', 'sans-serif'],
-      } 
+    content: [
+        "./index.html",
+        "./src/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+        extend: {
+        colors: {
+            // oranges
+            'orange-lt': '#FED7AA',
+            'orange': '#FDBA74',
+            // pinks
+            'rose-lt': '#FEE2E2',
+            'rose': '#FDA4AF',
+            // violets
+            'violet-lt': '#DDD6FE',
+            'violet-md': '#C4B5FD',
+            'violet': '#A78BFA',
+            'violet-dk': '#2E1065',
+            // teals
+            'teal-lt': '#CCFBF1',
+            'teal': '#99F6E4',
+            'teal-dk': '#5EEAD4',
+            // grays
+            'shdw': '#D4D4D4',
+            'gray-lt': '#FAFAFA',
+            'gray-md': '#94A3B8',
+            'gray': '#334155',
+            'gray-dk': '#262626',
+            'black': '#171717',
+        },
+        fontFamily: {
+            'sans': ['Sen', 'sans-serif'],
+        } 
+        },
     },
-  },
-  plugins: [],
+    plugins: [
+        require('tailwindcss/plugin')(({ addVariant }) => {
+        // for customizing search input 'clear' btn
+        addVariant('search-cancel', '&::-webkit-search-cancel-button');
+        }),
+    ],
 }
 

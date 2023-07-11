@@ -35,7 +35,7 @@ const SearchField = () => {
     return (
         <div className="flex">
             <input 
-                className="bg-gray-lt text-sm w-full px-6 p-2.5 rounded-tl rounded-bl outline-none focus:bg-white"
+                className="bg-gray-lt text-gray text-base w-full pl-6 pr-4 p-2.5 rounded-tl rounded-bl outline-none focus:bg-white search-cancel:p-px search-cancel:ml-4 search-cancel:cursor-pointer search-cancel:opacity-50 hover:search-cancel:opacity-80 placeholder:text-gray-md"
                 type="Search"
                 placeholder="Search Keywords..."
                 value={searchValue}
@@ -47,7 +47,7 @@ const SearchField = () => {
                 onClick={handleButtonSearch}
                 // disable button if search input is blank
                 disabled={!searchValue}
-                className="bg-teal-lt px-5 py-2.5 rounded-tr rounded-br active:bg-teal-dk focus:bg-teal-xdk hover:bg-teal disabled:bg-pink"
+                className="bg-teal-lt px-5 py-2.5 rounded-tr rounded-br active:bg-teal-dk focus:bg-teal-dk hover:bg-teal disabled:bg-rose-lt"
             >🔍</button>
         </div>
     );

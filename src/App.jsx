@@ -1,5 +1,6 @@
 import { createContext, useState } from 'react';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import SearchField from './components/SearchField';
 import Images from './components/Images';
 import useAxios from './hooks/UseAxios';
@@ -26,13 +27,16 @@ const App = () => {
     }
 
     return (
-        // provide data regarding the API call to components that have the useContext Hook
-        <ImageContext.Provider value={value}>
-        <Header>
-        <SearchField></SearchField>
-        </Header>
-        <Images />
-        </ImageContext.Provider>
+        <>
+            {/* provide data regarding the API call to components that have the useContext Hook */}
+            <ImageContext.Provider value={value}>
+            <Header>
+            <SearchField></SearchField>
+            </Header>
+            <Images />
+            </ImageContext.Provider>
+            <Footer></Footer>
+        </>
     );
 }
 

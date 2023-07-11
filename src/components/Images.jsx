@@ -14,7 +14,7 @@ const Images = () => {
                 {/* display skeleton component when API request is loading */}
                 {/* when done loading, an image is rendered for each item in the response array */}
                 {/* React requires passing a key prop with map() */}
-                {isLoading ? <Skeleton item={10} /> : response.map((data, key) => <Image key={key} data={data} />)}
+                {isLoading ? <Skeleton item={16} /> : response.map((data, key) => <Image key={key} data={data} />)}
             </div>
         </>
     );

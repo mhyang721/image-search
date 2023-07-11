@@ -7,6 +7,8 @@ import { useState, useEffect } from 'react';
 const useAxios = (param) => {
     // store response data received from the API
     const [response, setResponse] = useState([]);
+    // store the total number of image results
+    const [totalResults, setTotalResults] = useState(0);
     // track whether the API request is currently loading
     const [isLoading, setIsLoading] = useState(false);
     // store any error msgs that occur during the API request
@@ -24,9 +26,11 @@ const useAxios = (param) => {
             setIsLoading(true);
             // perform API request using axios based on the provided url
             // await pauses execution of the fxn until promise returned by axios(url) is resolved
-            const res = await axios(url)
+            const res = await axios(url);
             // if successful, response state is updated with results
             setResponse(res.data.results);
+            // store the total # of results
+            setTotalResults(res.data.total);
         } catch(err) {
             // stores error msgs that may occur
             setError(err)
@@ -44,6 +48,7 @@ const useAxios = (param) => {
 
     return {
         response,
+        totalResults,
         isLoading,
         error,
         fetchData: url => fetchData(url)

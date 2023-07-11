@@ -8,7 +8,7 @@ const SearchField = () => {
     // search input is initially set to blank
     const [searchValue, setSearchValue] = useState('');
     // handle API request
-    const { fetchData, setSearchTitle } = useContext(ImageContext);
+    const { fetchData, setSearchTitle, page, setPage } = useContext(ImageContext);
 
     // set searchValue as the text entered in the search input
     const handleInputChange = (e) => {
@@ -16,19 +16,22 @@ const SearchField = () => {
     }
     // make API request on button click, based on search input
     const handleButtonSearch = () => {
-        fetchData(`search/photos?page=1&query=${searchValue}&client_id=${import.meta.env.VITE_REACT_APP_ACCESS_KEY}`)
+        fetchData(`search/photos?page=${page}&per_page=${imgPerPage}&query=${searchValue}&client_id=${import.meta.env.VITE_REACT_APP_ACCESS_KEY}`)
         // clear search input after button is clicked
         setSearchValue('');
         // set search result title as the searched value
         setSearchTitle(searchValue);
+        // set pagination back to 1 after a new search
+        setPage(1);
     }
     // make API request after hitting enter, based on search input
     const handleEnterSearch = e => {
         if(e.key === 'Enter') {
-            fetchData(`search/photos?page=1&query=${searchValue}&client_id=${import.meta.env.VITE_REACT_APP_ACCESS_KEY}`)
+            fetchData(`search/photos?page=${page}&per_page=${imgPerPage}&query=${searchValue}&client_id=${import.meta.env.VITE_REACT_APP_ACCESS_KEY}`)
             // clear search input after pressing enter
             setSearchValue('');
             setSearchTitle(searchValue);
+            setPage(1);
         }
     }
 
@@ -47,7 +50,7 @@ const SearchField = () => {
                 onClick={handleButtonSearch}
                 // disable button if search input is blank
                 disabled={!searchValue}
-                className="bg-teal-lt px-5 py-2.5 rounded-tr rounded-br active:bg-teal-dk focus:bg-teal-dk hover:bg-teal disabled:bg-rose-lt"
+                className="bg-teal-lt px-5 py-2.5 rounded-tr rounded-br active:bg-teal-dk focus:bg-teal-dk hover:bg-teal disabled:bg-rose-lt transition duration-500"
             >🔍</button>
         </div>
     );

@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import SearchField from './components/SearchField';
 import Images from './components/Images';
 import Pagination from './components/Pagination';
-import useAxios from './hooks/UseAxios';
+import useAxios from './hooks/useAxios';
 
 // create context to make data accessible to different components
 export const ImageContext = createContext();
@@ -22,6 +22,7 @@ const App = () => {
 
     const { response, totalResults, isLoading, error, fetchData } = useAxios(`search/photos?page=${page}&per_page=${imgPerPage}&query=${searchTitle}&client_id=${import.meta.env.VITE_REACT_APP_ACCESS_KEY}`);
 
+    console.log(response);
     // data from the API call
     const value = {
         response,

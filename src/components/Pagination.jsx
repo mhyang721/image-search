@@ -31,7 +31,7 @@ const Pagination = () => {
                 (
                     <>
                         <button
-                            className="bg-rose text-white text-lg px-4 py-2 rounded hover:none md-hover:bg-rose-lt md-hover:text-rose transition duration-300 disabled:bg-shdw disabled:text-white"
+                            className="bg-rose text-white text-lg px-4 py-2 rounded hover:none md:hover:bg-rose-lt md:hover:text-rose transition duration-300 disabled:bg-shdw disabled:text-white"
                             disabled={page === 1}
                             onClick={() => {
                                 setPage((prevPage) => prevPage - 1);
@@ -41,7 +41,7 @@ const Pagination = () => {
                         </button>
                         <p className="w-5 text-center text-gray text-lg">{page}</p>
                         <button 
-                            className="bg-teal-dk text-white text-lg px-4 py-2 rounded hover:none md-hover:bg-teal-lt md-hover:text-teal-dk transition duration-300 animate-pulse md-hover:animate-none disabled:animate-none disabled:bg-shdw disabled:text-white"
+                            className="bg-teal-dk text-white text-lg px-4 py-2 rounded hover:none md:hover:bg-teal-lt md:hover:text-teal-dk transition duration-300 animate-pulse md:hover:animate-none disabled:animate-none disabled:bg-shdw disabled:text-white"
                             disabled={page === totalPages}
                             onClick={() => {
                                 setPage((prevPage) => prevPage + 1);
